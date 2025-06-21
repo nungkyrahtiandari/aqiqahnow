@@ -3,31 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AqiqahNow</title>
+  <title>AqiqahNow Login</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body, html {
-      width: 100%;
-      height: 100%;
-    }
-    .screen {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: contain;         /* Show entire image */
-      background-repeat: no-repeat;     /* Prevent image repetition */
-      background-position: center;      /* Center the image */
-      background-color: #fff8ed;        /* Optional background color */
-      transition: opacity 1s ease;
-    }
-    #loading-screen {
-      background-image: url('asset/loading.jpg');
-      z-index: 2;
-    }
     * {
       margin: 0;
       padding: 0;
@@ -121,23 +98,40 @@
       color: #333;
     }
 
-    .login-container {
+    @media screen and (max-height: 600px) {
+      .login-container {
         margin-top: 30px;
         padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div id="loading-screen" class="screen"></div>
-  <a href="guide"><div id="login-screen"></div></a>
+  <div class="login-container">
+    <div class="logo">
+      <img src="/mnt/data/logo-kambing.png" alt="AqiqahNow Logo"> <!-- optional logo -->
+      <h1>AQIQAHNOW</h1>
+      <p>sahabat menuai kebaikan</p>
+    </div>
 
-  <script>
-    setTimeout(() => {
-      document.getElementById("loading-screen").style.opacity = "0";
-      document.getElementById("login-screen").style.opacity = "1";
-    }, 500);
-  </script>
+    <div class="input-group">
+      <label for="email">Email/No Hp</label>
+      <input type="text" id="email" placeholder="Masukkan email atau no hp">
+    </div>
+
+    <div class="input-group">
+      <label for="password">Kata Sandi</label>
+      <input type="password" id="password" placeholder="Masukkan kata sandi">
+    </div>
+
+    <button class="btn btn-login">MASUK</button>
+    <button class="btn btn-signup">DAFTAR</button>
+
+    <div class="forgot">
+      <p>Lupa Password?</p>
+    </div>
+  </div>
 
 </body>
 </html>
